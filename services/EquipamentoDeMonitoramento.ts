@@ -31,10 +31,9 @@ export class EquipamentoDeMonitoramento {
 
       console.log(dados);
 
-      //AJUSTAR
-      // this.getTemperaturaAtual = dados.main.temp;
-      // this.getHumidadeAtual = dados.main.humidity;
-      // this.pressaoAtual = dados.main.pressure;
+      this.temperaturaAtual = dados.main.temp;
+      this.humidadeAtual = dados.main.humidity;
+      this.pressaoAtual = dados.main.pressure;
 
       if (this.monitorDadosClima) {
         this.monitorDadosClima.dadosMudaram();
@@ -68,3 +67,7 @@ export class EquipamentoDeMonitoramento {
     return this.pressaoAtual;
   }
 }
+
+const equipamento = new EquipamentoDeMonitoramento();
+
+equipamento.coletar();
